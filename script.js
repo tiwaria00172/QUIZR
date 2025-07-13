@@ -9,7 +9,7 @@ function loadFile(event) {
   reader.onload = function (e) {
     loadedContent = e.target.result;
     document.getElementById('inputArea').value = '';
-    document.getElementById('fileStatus').textContent = `✅ "${file.name}" loaded successfully!`;
+    document.getElementById('fileStatus').textContent = ` "${file.name}" loaded successfully!`;
   };
   reader.readAsText(file);
 }
