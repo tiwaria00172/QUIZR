@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results - QuizCraft</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="brand">QuizCraft</div>
+  <h2>Quiz Results</h2>
+
+  <div id="resultContainer" class="main-content"></div>
+
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <canvas id="resultChart" width="300" height="300"></canvas>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <button onclick="window.location.href='quiz.html'">⬅ Back to Quiz</button>
+    <button onclick="window.location.href='index.html'">🔁 Try New Quiz</button>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("quizResult"));
+    const resultDiv = document.getElementById("resultContainer");
+
+    if (!data) {
+      resultDiv.innerHTML = "<p>No result data found. Please take the quiz first.</p>";
+    } else {
+      const { score, total, correctAnswers, userAnswers, questions } = data;
+      const incorrect = total - score;
+
+      resultDiv.innerHTML = `<h3 style="text-align:center;">Your Score: ${score} / ${total}</h3><ul style="list-style:none;">` +
+        questions.map((q, i) => {
+          const correct = correctAnswers[i];
+          const user = userAnswers[i] || "Not answered";
+          const isCorrect = correct === user;
+          return `<li class="${isCorrect ? 'correct' : 'incorrect'}" style="margin-bottom:10px;padding:10px;border-radius:10px;">
+            <strong>${q.question}</strong><br>
+            Your Answer: <span>${user}</span><br>
+            Correct Answer: <span>${correct}</span>
+          </li>`;
+        }).join("") + `</ul>`;
+
+      const ctx = document.getElementById('resultChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Correct', 'Incorrect'],
+          datasets: [{
+            data: [score, incorrect],
+            backgroundColor: ['#28a745', '#dc3545']
+          }]
+        },
+        options: {
+          responsive: false
+        }
+      });
+    }
+  </script>
+</body>
+</html>

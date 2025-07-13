@@ -1,1 +1,1 @@
-# QUIZR
+# Quiz

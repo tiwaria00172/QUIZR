@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MCQ Generator - QuizCraft</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="brand">QuizCraft</div>
+
+  <label style="float: right; margin-bottom: 10px;">
+    🌙 Dark Mode
+    <input type="checkbox" onchange="toggleDarkMode()">
+  </label>
+
+  <div class="main-content">
+    <h5>Upload file in .txt format or paste the questions</h5>
+    <input type="file" accept=".txt" onchange="loadFile(event)">
+    <div id="fileStatus" style="margin-bottom: 10px; font-weight: bold; color: green;"></div>
+    <label for="timerInput">Set Timer (minutes):</label>
+    <input type="number" id="timerInput" placeholder="(Optional) e.g. 5">
+    <br>
+    <textarea id="inputArea" placeholder="Paste questions here..."></textarea>
+    <button onclick="prepareQuiz()">Generate Quiz</button>
+  </div>
+
+  <div id="timer"></div>
+  <div id="quizContainer"></div>
+  <div class="result" id="result"></div>
+
+  <section class="about-section" id="about">
+    <h2>About QuizCraft</h2>
+    <p>
+      QuizCraft is a simple and interactive web-based quiz platform designed to help students
+      test their knowledge and improve their learning. Create, play, and learn — all in one place!
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
