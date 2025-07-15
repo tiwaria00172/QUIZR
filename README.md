@@ -12,9 +12,7 @@ A sleek, interactive web app that **automatically generates MCQs (Multiple Choic
 - 💎 **Clean, responsive, and premium UI design**  
 - 📁 Works entirely on the **browser — no backend required**
 
-## 📸 Demo
 
-*(Insert link to demo video, GitHub Pages deployment, or screenshots here)*
 
 ## 📂 Project Structure
 
