@@ -5,7 +5,7 @@ A sleek, interactive web app that **automatically generates MCQs (Multiple Choic
 
 ## 🚀 Features
 
-- ✅ **Paste or upload text** to instantly generate MCQs  
+- ✅ **Paste or upload text** to instantly generate MCQs.
 - ⏱️ **Built-in timer** for quiz-taking sessions  
 - 📊 **Result page** with score and answer breakdown  
 - 🎯 **Visual feedback**: highlights correct and incorrect options after submission  
