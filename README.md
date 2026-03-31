@@ -10,7 +10,7 @@ A sleek, interactive web app that **automatically generates MCQs (Multiple Choic
 - 📊 **Result page** with score and answer breakdown  
 - 🎯 **Visual feedback**: highlights correct and incorrect options after submission  
 - 💎 **Clean, responsive, and premium UI design**  
-- 📁 Works entirely on the **browser — no backend required**
+- 📁 Works entirely on the **browser — no backend required.**
 
 
 
