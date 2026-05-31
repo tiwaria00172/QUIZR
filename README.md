@@ -22,5 +22,5 @@ A sleek, interactive web app that **automatically generates MCQs (Multiple Choic
 ├── result.html        # Result display page
 ├── style.css          # Custom styles
 ├── script.js          # Core quiz logic and DOM handling
-├── data-parser.js     # Text parsing and MCQ generation logic
+
 
